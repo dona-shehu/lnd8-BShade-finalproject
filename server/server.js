@@ -1,0 +1,39 @@
+const express = require("express");
+const app = express();
+app.use(express.json())
+
+const port = process.env.PORT || 4444;
+const data = [
+    {
+        "prod_id": 1,
+        "prod_name": "rice",
+        "image": "https://images.unsplash.com/photo-1516684732162-798a0062be99?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8Zm9vZCUyMHJpY2V8ZW58MHx8MHx8&auto=format&fit=crop&w=600&q=60",
+        "price": 3.4
+    },
+    {
+        "prod_id": 2,
+        "prod_name": "pasta",
+        "image": "https://images.unsplash.com/photo-1516684732162-798a0062be99?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8Zm9vZCUyMHJpY2V8ZW58MHx8MHx8&auto=format&fit=crop&w=600&q=60",
+        "price": 4
+    },
+    {
+        "prod_id": 3,
+        "prod_name": "cookie",
+        "image": "https://images.unsplash.com/photo-1516684732162-798a0062be99?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8Zm9vZCUyMHJpY2V8ZW58MHx8MHx8&auto=format&fit=crop&w=600&q=60",
+        "price": 9
+    },
+    {
+        "prod_id": 4,
+        "prod_name": "caffe",
+        "image": "https://images.unsplash.com/photo-1516684732162-798a0062be99?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8Zm9vZCUyMHJpY2V8ZW58MHx8MHx8&auto=format&fit=crop&w=600&q=60",
+        "price": 7
+    }
+]
+
+
+// GET "/"
+app.get("/", (req, res) => {
+    res.send(data);
+});
+
+app.listen(port, () => console.log(`Listening on port ${port}`));
