@@ -35,7 +35,7 @@ const data = [
 
 // GET "/"
 app.get("/", (req, res) => {
-    res.send(data);
+    res.send(data); 
 });
 //Get by id
 app.get("/:id", (req, res) => {
