@@ -1,7 +1,6 @@
 const express = require("express");
 const app = express();
 app.use(express.json())
-
 const port = process.env.PORT || 4444;
 const data = [
     {
@@ -29,8 +28,6 @@ const data = [
         "price": 7
     }
 ]
-
-
 // GET "/"
 app.get("/", (req, res) => {
     res.send(data);
