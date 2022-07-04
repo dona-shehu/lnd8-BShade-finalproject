@@ -1,6 +1,6 @@
 import { Routes, Route } from "react-router-dom";
 import HomePage from "./components/HomePage";
-import ProductPage from "./components/ProductPage";
+import Register from "./components/Register";
 import "./App.css";
 import Navbar from "./components/Navbar";
 
@@ -10,7 +10,7 @@ function App() {
       <Navbar/>
       <Routes>
         <Route path="/" element={<HomePage />} />
-        <Route path="productpage" element={<ProductPage />} />
+        <Route path="register" element={<Register />} />
       </Routes>
     </div>
   );
