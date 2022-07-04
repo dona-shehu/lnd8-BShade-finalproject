@@ -7,25 +7,25 @@ const data = [
         "prod_id": 1,
         "prod_name": "rice",
         "image": "https://images.unsplash.com/photo-1516684732162-798a0062be99?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8Zm9vZCUyMHJpY2V8ZW58MHx8MHx8&auto=format&fit=crop&w=600&q=60",
-        "price": 3.4
+        "price": 3.99
     },
     {
         "prod_id": 2,
         "prod_name": "pasta",
         "image": "https://images.unsplash.com/photo-1516684732162-798a0062be99?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8Zm9vZCUyMHJpY2V8ZW58MHx8MHx8&auto=format&fit=crop&w=600&q=60",
-        "price": 4
+        "price": 4.99
     },
     {
         "prod_id": 3,
         "prod_name": "cookie",
         "image": "https://images.unsplash.com/photo-1516684732162-798a0062be99?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8Zm9vZCUyMHJpY2V8ZW58MHx8MHx8&auto=format&fit=crop&w=600&q=60",
-        "price": 9
+        "price": 5.99
     },
     {
         "prod_id": 4,
         "prod_name": "caffe",
         "image": "https://images.unsplash.com/photo-1516684732162-798a0062be99?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8Zm9vZCUyMHJpY2V8ZW58MHx8MHx8&auto=format&fit=crop&w=600&q=60",
-        "price": 7
+        "price": 6.99
     }
 ]
 // GET "/"
