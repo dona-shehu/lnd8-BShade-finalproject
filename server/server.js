@@ -43,5 +43,11 @@ app.get("/:id", (req, res) => {
     const filteredProduct = data.filter((product) => product.prod_id === id)
     res.send(filteredProduct);
 });
+//Get by id
+app.get("/:id", (req, res) => {
+    const id = Number(req.params.id);
+    const filteredProduct = data.filter((product)=> product.prod_id === id)
+    res.send(filteredProduct);
+});
 
 app.listen(port, () => console.log(`Listening on port ${port}`));
