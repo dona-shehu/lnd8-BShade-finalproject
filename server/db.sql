@@ -21,6 +21,7 @@ CREATE TABLE categories(
     email     VARCHAR(25) NOT NULL
 );
 
+
 CREATE TABLE products (
   id       SERIAL PRIMARY KEY,
   name     VARCHAR(30) NOT NULL,
@@ -32,9 +33,6 @@ CREATE TABLE products (
   cat_id    INT REFERENCES categories(id),
   image  	VARCHAR(3000) NOT NULL
 );
-
-
-
 
 
 CREATE TABLE users (
@@ -105,5 +103,3 @@ Pack size: 240G', 'Mexico', 2.50, 'https://digitalcontent.api.tesco.com/v2/media
 
 
 
-
-  

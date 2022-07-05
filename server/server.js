@@ -33,6 +33,7 @@ const data = [
     }
 ]
 
+
 // GET "/"
 app.get("/", (req, res) => {
     res.send(data); 
