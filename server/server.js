@@ -13,6 +13,12 @@ const pool = new Pool({
     password: 'donashehu',
     port: 5432
 });
+//Get by id
+app.get("/:id", (req, res) => {
+    const id = Number(req.params.id);
+    const filteredProduct = data.filter((product)=> product.prod_id === id)
+    res.send(filteredProduct);
+});
 
 
 
