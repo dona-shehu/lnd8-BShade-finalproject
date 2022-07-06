@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import {Box, Grid, Card, CardActions, CardContent, CardMedia, Button, Typography} from "@mui/material"
+import { Box, Grid, Card, CardActions, CardContent, CardMedia, Button, Typography } from "@mui/material"
+
 
 function ProductPage() {
   useEffect(() => {
@@ -41,10 +42,7 @@ function ProductPage() {
                   </Typography>
                 </Link>
                 <Typography variant="body2" color="text.secondary">
-                  {/* {item.description} */}
-                  {/* Rice is the seed of the grass species Oryza sativa or less
-                  commonly Oryza glaberrima. The name wild rice is usually used
-                  for species of the genera Zizania */}
+                 
                 </Typography>
               </CardContent>
 
