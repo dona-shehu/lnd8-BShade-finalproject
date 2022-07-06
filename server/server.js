@@ -6,26 +6,22 @@ app.use(cors());
 
 
 app.use(express.json())
+const cors = require('cors');
+app.use(cors()) 
+
+
 const port = process.env.PORT || 4444;
 
 
 const { Pool } = require('pg');
 
+
 const pool = new Pool({
-    user: 'codeyourfuture',
-    host: 'localhost',
-    database: 'hujreh',
-    password: 'donashehu',
-    port: 5432
-});
-//Get by id
-app.get("/:id", (req, res) => {
-    const id = Number(req.params.id);
-    const filteredProduct = data.filter((product)=> product.prod_id === id)
-    res.send(filteredProduct);
-});
-
-
+    connectionString: process.env.DATABASE_URL,
+    ssl: {
+        rejectUnauthorized: false
+    } 
+})
 
 app.get("/inventory", (req, res) => {
     pool.query('SELECT * FROM products')
@@ -45,6 +41,7 @@ app.get("/inventory/:id", (req, res) => {
             res.status(500).json(error)
         })
 })
+
 
 
 app.listen(port, () => console.log(`Listening on port ${port}`));

@@ -11,7 +11,7 @@ function ProductPage() {
   const [items, setItems] = useState([]);
 
   const fetchItems = async () => {
-    const data = await fetch("http://localhost:4444/");
+    const data = await fetch("http://localhost:4444/inventory");
     const items = await data.json();
     console.log(items);
     setItems(items);
@@ -27,7 +27,7 @@ function ProductPage() {
         {items.map((item, index) => (
           <Grid item xs={2} sm={4} md={4} key={index}>
             <Card sx={{ maxWidth: 345 }}>
-              <Link to={`/productpage/${item.prod_id}`}>
+              <Link to={`/productpage/${item.id}`}>
                 <CardMedia
                   component="img"
                   height="140"
@@ -38,13 +38,11 @@ function ProductPage() {
               <CardContent>
                 <Link to={`/productpage/${item.prod_id}`}>
                   <Typography gutterBottom variant="h5" component="div">
-                    {item.prod_name.toUpperCase()}
+                    {item.name}
                   </Typography>
                 </Link>
                 <Typography variant="body2" color="text.secondary">
-                  Rice is the seed of the grass species Oryza sativa or less
-                  commonly Oryza glaberrima. The name wild rice is usually used
-                  for species of the genera Zizania.
+                 
                 </Typography>
               </CardContent>
 
