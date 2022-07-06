@@ -54,9 +54,9 @@ const { id } = useParams();
 
               <CardContent>
                 <Typography gutterBottom variant="h5" component="div">
-                 <h4> {value.prod_name.toUpperCase()} </h4>
-                  <h5>{formatCurrency(`${ value.price }`, opts)}</h5>
-                </Typography> 
+                  <h4> {value.prod_name.toUpperCase()} </h4>
+                  <h5>{formatCurrency(`${value.price}`, opts)}</h5>
+                </Typography>
 
                 <Typography variant="body2" color="text.secondary">
                   Rice is the seed of the grass species Oryza sativa or less
@@ -65,7 +65,6 @@ const { id } = useParams();
                 </Typography>
               </CardContent>
                 <Rating />
-
               <CardActions>
                 <Button size="small">Add to cart</Button>
                 <Button size="small">Learn More</Button>

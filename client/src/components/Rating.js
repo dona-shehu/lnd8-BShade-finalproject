@@ -1,8 +1,8 @@
-import { Stack,Rating } from "@mui/material";
+import { Stack, Rating } from "@mui/material";
 
 function Review() {
   return <Stack spacing={2}>
-<Rating />
+<Rating precision={0.5} />
   </Stack>;
 }
 
