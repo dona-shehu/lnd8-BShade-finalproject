@@ -10,6 +10,7 @@ import {
   Typography,
 } from "@mui/material";
 import { useParams } from "react-router-dom";
+import formatCurrency from "format-currency";
 // import { Link } from "react-router-dom";
 
 function ProductDetails() {
@@ -30,6 +31,8 @@ const { id } = useParams();
     setItem(item);
   };
 
+  let opts = { format: "%s%v", symbol: "£" };
+
   return (
     <Box sx={{ flexGrow: 1, margin: 2 }}>
       <Grid
@@ -49,13 +52,14 @@ const { id } = useParams();
 
               <CardContent>
                 <Typography gutterBottom variant="h5" component="div">
-                  {value.prod_name.toUpperCase()} {value.price}
-                </Typography>
+                 <h4> {value.prod_name.toUpperCase()} </h4>
+                  <h5>{formatCurrency(`${ value.price }`, opts)}</h5>
+                </Typography> 
 
                 <Typography variant="body2" color="text.secondary">
                   Rice is the seed of the grass species Oryza sativa or less
                   commonly Oryza glaberrima. The name wild rice is usually used
-                  for species of the genera Zizania
+                  for species of the genera Zizania.
                 </Typography>
               </CardContent>
 
