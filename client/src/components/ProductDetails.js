@@ -8,9 +8,11 @@ import {
   CardMedia,
   Button,
   Typography,
+  Rating,
 } from "@mui/material";
 import { useParams } from "react-router-dom";
 import formatCurrency from "format-currency";
+
 // import { Link } from "react-router-dom";
 
 function ProductDetails() {
@@ -62,6 +64,7 @@ const { id } = useParams();
                   for species of the genera Zizania.
                 </Typography>
               </CardContent>
+                <Rating />
 
               <CardActions>
                 <Button size="small">Add to cart</Button>
