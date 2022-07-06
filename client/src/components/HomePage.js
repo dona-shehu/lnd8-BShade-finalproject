@@ -1,13 +1,14 @@
 import React from "react";
 import "./Style.css";
 import myData from "./data.json";
+import { Button } from "@material-ui/core";
 
 function HomePage() {
   return (
     <div className="root">
       <h1>This is the home page</h1>
       <input type="text" placeholder="Search ... " />
-      <button>Search</button>
+      <Button color="primary">Search</Button>
       <div>
         <div class="dropdown">
           <button onclick="myFunction()" class="dropbtn">
