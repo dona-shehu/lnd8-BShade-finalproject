@@ -20,7 +20,7 @@ CREATE TABLE seller(
   email VARCHAR(25) NOT NULL
 );
 
-INSERT INTO seller (name,      location, logo, email) VALUES('DRENA','12 WOODIRING CLOSE','/','donashehu@gmai.com');
+INSERT INTO seller (name,location, logo, email) VALUES('DRENA','12 WOODIRING CLOSE','/','donashehu@gmai.com');
 
 CREATE TABLE products (
   id SERIAL PRIMARY KEY,
@@ -249,29 +249,29 @@ Pack size: 170G',
     1
   );
 
--- INSERT INTO products (
---     name,
---     quantity,
---     description,
---     country,
---     price,
---     image,
---     cat_id
---   )
--- VALUES (
---     'Freixenet Italian Rose 20Cl',
---     15,
---     'Rosé Italian Wine
--- Presented in a striking cut-glass bottle, Freixenet Italian Rosé blends superior quality with stunning beauty. Using its extensive sparkling winemaking expertise, Freixenet has created the Rosé sibling to Freixenet\'s widely successful Prosecco. A stand-out rosé that is perfect to make any occasion extra special.
--- Freixenet Italian Rosé is a delicate blend of Glera and Pinot Noir grapes, carefully selected from the finest Italian vineyards. Light and effervescent, with notes of red berries and underlying hints of white flowers and apples.
--- Wine of Italy
--- Extra dry
--- Pack size: 20CL',
---     'Itally',
---     4.00,
---     'https://digitalcontent.api.tesco.com/v2/media/ghs/7a4a9e89-1e3b-44ed-be01-40e1e6bae190/aa9e7e1b-3d8e-4493-bada-2653110ff5a4.jpeg?h=540&w=540',
---     2
---   );
+INSERT INTO products (
+    name,
+    quantity,
+    description,
+    country,
+    price,
+    image,
+    cat_id
+  )
+VALUES (
+    'Freixenet Italian Rose 20Cl',
+    15,
+    'Rosé Italian Wine
+Presented in a striking cut-glass bottle, Freixenet Italian Rosé blends superior quality with stunning beauty. Using its extensive sparkling winemaking expertise, Freixenet has created the Rosé sibling to Freixenet`s widely successful Prosecco. A stand-out rosé that is perfect to make any occasion extra special.
+Freixenet Italian Rosé is a delicate blend of Glera and Pinot Noir grapes, carefully selected from the finest Italian vineyards. Light and effervescent, with notes of red berries and underlying hints of white flowers and apples.
+Wine of Italy
+Extra dry
+Pack size: 20CL',
+    'Itally',
+    4.00,
+    'https://digitalcontent.api.tesco.com/v2/media/ghs/7a4a9e89-1e3b-44ed-be01-40e1e6bae190/aa9e7e1b-3d8e-4493-bada-2653110ff5a4.jpeg?h=540&w=540',
+    2
+  );
 
 INSERT INTO products (
     name,
@@ -330,64 +330,64 @@ Pack size: 450G',
     'https://digitalcontent.api.tesco.com/v2/media/ghs/1bd74801-5d6e-405e-963e-c818c4395430/41b0908c-7ec5-4201-a91f-97e5e1094621.jpeg?h=540&w=540',
     1
   );
--- INSERT INTO products (
---     name,
---     quantity,
---     description,
---     country,
---     price,
---     image,
---     cat_id
---   )
--- VALUES(
---     'Deli Kitchen 4 Greek Style Flatbreads 320G',
---     30,
---     '4 Plain Flatbreads
--- Here at Deli Kitchen HQ our mission is to innovate mealtimes. We start each day with a "What If?" and end with our customer (That`s You!). We asked What if sandwiches could be tastier, healthier, less boring? we asked `What if sandwiches could be, well, less bready?!` then we put our inventive, curious & slightly eccentric heads together and came up with a range of tasty, easy to use flatbreads. Start your day with a "What if?" and join us in innovating mealtimes.
--- Packaged in a protective atmosphere.
--- Pop Me in the Freezer
--- Source of Fibre
--- Perfect for kebabs
--- Suitable for Vegetarians
--- Pack size: 320G',
---     'Grece',
---     1.50,
---     'https://digitalcontent.api.tesco.com/v2/media/ghs/29a1f18d-d049-4ad5-a0b6-3626d650fa47/9c008656-0643-4106-8dae-bb14a143ce4d.jpeg?h=540&w=540',
---     1
---   );
---   INSERT INTO products (
---     name,
---     quantity,
---     description,
---     country,
---     price,
---     image,
---     cat_id
---   )
--- VALUES(
---     'Vivera Veggie Greek Kebab 175G',
---     30,
---     'Precooked plant-based slices made from rehydrated soya protein and seasoned with Greek kebab style herbs. This product contains added iron and vitamin B12.
--- You`ve Got the Power to Do Good
--- Congrats! By choosing this product you have just done your body, the planet and animals a big favour! Want to know more about the impact of eating less meat, look on the inside of this sleeve. Enthusiastic? Then let`s inspire more people to join the Goodness Movement!
--- Scan or head to vivera.com for the full recipe and instructions.
--- Product packed in a protective atmosphere.
--- Contains 15% Protein + Vitamin B12 & Iron
--- Great Taste
--- Morelife Lessmeat
--- Easy Does It! Cook Me Please
--- 100% plant-based
--- High in protein
--- Source of iron and vitamin B12
--- Prepared to a vegan recipe
--- Vegan Friendly
--- Suitable for vegans
--- Pack size: 175G',
---     'Grece',
---     2.50,
---     'https://digitalcontent.api.tesco.com/v2/media/ghs/37e36d0c-093c-4a36-99ad-3dde9cabfd23/5641aebb-c824-40b9-8a5c-0b7ba1778b54.jpeg?h=540&w=540',
---     1
---   );
+INSERT INTO products (
+    name,
+    quantity,
+    description,
+    country,
+    price,
+    image,
+    cat_id
+  )
+VALUES(
+    'Deli Kitchen 4 Greek Style Flatbreads 320G',
+    30,
+    '4 Plain Flatbreads
+Here at Deli Kitchen HQ our mission is to innovate mealtimes. We start each day with a "What If?" and end with our customer (That`s You!). We asked What if sandwiches could be tastier, healthier, less boring? we asked `What if sandwiches could be, well, less bready?!` then we put our inventive, curious & slightly eccentric heads together and came up with a range of tasty, easy to use flatbreads. Start your day with a "What if?" and join us in innovating mealtimes.
+Packaged in a protective atmosphere.
+Pop Me in the Freezer
+Source of Fibre
+Perfect for kebabs
+Suitable for Vegetarians
+Pack size: 320G',
+    'Grece',
+    1.50,
+    'https://digitalcontent.api.tesco.com/v2/media/ghs/29a1f18d-d049-4ad5-a0b6-3626d650fa47/9c008656-0643-4106-8dae-bb14a143ce4d.jpeg?h=540&w=540',
+    1
+  );
+  INSERT INTO products (
+    name,
+    quantity,
+    description,
+    country,
+    price,
+    image,
+    cat_id
+  )
+VALUES(
+    'Vivera Veggie Greek Kebab 175G',
+    30,
+    'Precooked plant-based slices made from rehydrated soya protein and seasoned with Greek kebab style herbs. This product contains added iron and vitamin B12.
+You`ve Got the Power to Do Good
+Congrats! By choosing this product you have just done your body, the planet and animals a big favour! Want to know more about the impact of eating less meat, look on the inside of this sleeve. Enthusiastic? Then let`s inspire more people to join the Goodness Movement!
+Scan or head to vivera.com for the full recipe and instructions.
+Product packed in a protective atmosphere.
+Contains 15% Protein + Vitamin B12 & Iron
+Great Taste
+Morelife Lessmeat
+Easy Does It! Cook Me Please
+100% plant-based
+High in protein
+Source of iron and vitamin B12
+Prepared to a vegan recipe
+Vegan Friendly
+Suitable for vegans
+Pack size: 175G',
+    'Grece',
+    2.50,
+    'https://digitalcontent.api.tesco.com/v2/media/ghs/37e36d0c-093c-4a36-99ad-3dde9cabfd23/5641aebb-c824-40b9-8a5c-0b7ba1778b54.jpeg?h=540&w=540',
+    1
+  );
 
 INSERT INTO products (
     name,
