@@ -1,4 +1,3 @@
-
 drop table if exists users;
 
 drop table if exists products;
@@ -7,10 +6,7 @@ drop table if exists seller;
 
 drop table if exists categories;
 
-CREATE TABLE categories(
-  id SERIAL PRIMARY KEY,
-  name VARCHAR(30)
-);
+CREATE TABLE categories(id SERIAL PRIMARY KEY, name VARCHAR(30));
 
 CREATE TABLE seller(
   id SERIAL PRIMARY KEY,
@@ -30,6 +26,9 @@ CREATE TABLE products (
   sell_id INT REFERENCES seller(id),
   quantity INT NOT NULL,
   description TEXT,
+  information TEXT,
+  allergy_information VARCHAR(50),
+  storage VARCHAR(50),
   country VARCHAR(30),
   price DECIMAL NOT NULL,
   cat_id INT REFERENCES categories(id),
@@ -62,7 +61,7 @@ INSERT INTO
     email
   )
 VALUES
-(
+  (
     'Drena',
     '12 Woodridings Close',
     'Hatch End',
@@ -96,6 +95,9 @@ INSERT INTO
     sell_id,
     quantity,
     description,
+    information,
+    allergy_information,
+    storage,
     country,
     price,
     image,
@@ -108,6 +110,26 @@ VALUES
     10,
     'Tortilla Chips with Avocado Tastee Delicioso Sabor Mexicano! Gently roasted for a crispy bite and generously sized to fit all your favorite dips.Veegan.
     We believe that plant-based eating will change the world, and we want our delicious snacks to lead the way.Friendlee We only use carefully selected ingredients. No added nasties!Packaged in a protective atmosphere.Source of FibreGluten-FreeNon-GMOSuitable for Vegans Pack size: 135G',
+    'Corn (70 %),
+Sunflower Oil
+and Aroma with Avocado Flavor (6 %) (
+  Rice Flour,
+  Salt,
+  Spices,
+  Flavouring,
+  Sugar,
+  Acid (Citric Acid),
+  Dehydrated Onion,
+  Dehydrated Garlic,
+  Colour (
+    Copper Complexes of Chlorophylls
+    and Chlorophyllins
+  ),
+  Freeze Dried Avocado Powder (0.04 %)
+  and Starch
+)',
+    'May contain traces of Milk',
+    'Best before: see front of packStore in a cool dry place.',
     'Mexico',
     1.75,
     'https://digitalcontent.api.tesco.com/v2/media/ghs/5a789bbb-a817-4c6f-a69b-f93ee810737f/dde5269f-7c0b-4f02-80f0-367c673192a8_1714628850.jpeg?h=540&w=540',
@@ -119,6 +141,19 @@ VALUES
     12,
     'Steamed parboiled long grain rice with jalapeno peppers and red peppers with Mexican style spices.
 Visit BensOriginal.co.uk or BensOriginal.ie to find out more.',
+    'Steamed Parboiled Long Grain Rice (86 %),
+Red Pepper (5.9 %),
+Tomato Paste,
+Sunflower Oil,
+Natural Flavouring,
+Spices,
+Jalapeno Pepper,
+Salt,
+Onion Powder,
+Yeast Extract,
+Acid (Citric Acid),
+Garlic Powder',
+    'Store in a dry place at room temperature.Once opened refrigerate unheated rice for up to 3 days.',
     'Mexico',
     1.25,
     'https://digitalcontent.api.tesco.com/v2/media/ghs/a5c1a10e-a816-47a3-94a8-3080922d5008/20a73c85-4764-466a-b18d-656e48f14de9_1234694007.jpeg?h=240&w=240',
@@ -135,6 +170,11 @@ http://www.oldelpaso.co.uk
 Preservative Free
 Suitable for Vegetarians
 Pack size: 156',
+    'infCorn Flour,
+High Oleic Sunflower Oil (25 %)o',
+    'May contain Wheat.',
+    'Store in a cool,
+dry place.',
     'Mexico',
     1.45,
     'https://digitalcontent.api.tesco.com/v2/media/ghs/c331319e-fd7c-404a-935b-e2b31947e666/234faba3-4de2-4c84-b58b-feaa8fdfdbf3_1693755233.jpeg?h=540&w=540',
@@ -156,6 +196,35 @@ No need to add oil
 Sweet & Spicy
 No artificial colours, flavours or preservatives
 Pack size: 40G',
+    'Vegetables (Potato, Tomato, Onion),
+Corn Starch,
+Salt,
+Herbs
+and Spices (
+  Paprika,
+  Coriander,
+  Cumin (1.7 %),
+  Oregano (1.5 %),
+  Black Pepper,
+  Parsley,
+  Ginger,
+  Jalapeno Chilli Pepper,
+  Cinnamon,
+  Red Cayenne Pepper (0.2 %)
+),
+Garlic,
+Smoked Pork Fat,
+Flavouring,
+Lemon Juice Concentrate,
+Yeast Extract',
+    'May contain Gluten,
+Egg,
+Milk,
+Soya,
+Celery
+and Mustard',
+    'Store in a cool,
+dry place',
     'Mexico',
     0.69,
     'https://digitalcontent.api.tesco.com/v2/media/ghs/b80d1689-5580-4047-83de-4e6863b7bfa0/8ec547f0-fdab-402b-87aa-1f4e91961c0e.jpeg?h=540&w=540',
@@ -173,6 +242,18 @@ Chilli rating - Medium - 2
 No artificial colours and flavourings
 Suitable for vegetarians
 Pack size: 240G',
+    'Tomatoes (82 %),
+Onion,
+Chilli Peppers (2.5 %),
+Iodized Salt (Salt, Potassium Iodate),
+Coriander,
+Acidity Regulator: Citric Acid,
+Firming Agent: Calcium Chloride',
+    'Store in a cool,
+dry place out of direct sunlight.Once opened,
+keep refrigerated
+and consume within 5 days.Best before
+end: see cap.',
     'Mexico',
     2.50,
     'https://digitalcontent.api.tesco.com/v2/media/ghs/70df78a4-7a23-4323-92e3-ca84a6849949/83fbb33c-573b-42f1-b619-0c05de763ac2_1594057614.jpeg?h=540&w=540',
@@ -198,6 +279,11 @@ Pack size: 240G',
   A rich, medium roast with hints of dark chocolate and almonds
   Ideal for enjoying on an evening, after dinner
   Pack size: 227G',
+    'Arabica Coffee (100 %)',
+    'Once opened,
+seal with a clip
+and store in a cool,
+dry place for up to 2 weeks.',
     'Itally',
     4.00,
     'https://digitalcontent.api.tesco.com/v2/media/ghs/bd5376a7-2a7e-429e-aa8f-dc2e4abe8169/73a63992-0b37-488b-a98d-004edfdc7016_1372191263.jpeg?h=540&w=540',
@@ -211,6 +297,13 @@ Pack size: 240G',
 Galbani Burrata will take your love for mozzarella to the next level. Originating from the Apulia region in Southern Italy, Burrata is one of Italy`s most beloved cheeses. It is mozzarella formed into a pouch and filled with cream and ribbons of mozzarella that give it a delicious soft texture. Galbani Burrata has a mild, smooth and fresh milk flavour that makes it very versatile. Enjoy it with moist tomatoes, basil, crusty bread and a drizzle of olive oil for the ultimate Italian taste experience. You can also serve Burrata in pasta, pizza or simply have it on its own with seasoning. The best way to fully taste the flavours of Burrata is to enjoy it at an ambient temperature.
 Galbani® is Italy`s favourite cheesemaker, producing many of Italy`s most loved cheeses since 1882.
 Pack size: 150G',
+    'Pasteurised Milk,
+UHT Cream (Milk) 41 %,
+Acidity Regulator (Lactic Acid),
+Salt,
+Rennet',
+    'Contains: Milk',
+    'Use by: see lid.Keep refrigerated: + 4 ° C / + 8 ° C',
     'Itally',
     5.75,
     'https://digitalcontent.api.tesco.com/v2/media/ghs/c6c6f88a-2c7b-4f93-9e04-d5b8bfdf54f4/00c2ea04-4581-4704-aa88-736747ab3c32.jpeg?h=540&w=540',
@@ -224,6 +317,21 @@ Pack size: 150G',
 A Taste of Italy Infused in a classic Italian inspired marinade for a sweet flavour.
 A Taste of Italy Infused in a classic Italian inspired marinade for a sweet flavour.
 Pack size: 170G',
+    'INGREDIENTS: Roasted Red
+and Yellow Peppers,
+Sunflower Oil,
+Sugar,
+White Wine Vinegar,
+Sea Salt,
+Garlic Powder,
+Colour (Paprika Extract),
+Acidity Regulators (Citric Acid, Lactic Acid),
+Antioxidant (Ascorbic Acid).',
+    'Store in a cool,
+dry place.Once opened,
+keep refrigerated
+and consume within 2 weeks
+and by date shown.',
     'Itally',
     2.60,
     'https://digitalcontent.api.tesco.com/v2/media/ghs/d65a378c-64c1-42d9-af0f-961fad4ce2ba/c83883bf-fa60-4502-829d-3ce0e28800d1_389453040.jpeg?h=540&w=540',
@@ -239,6 +347,11 @@ Freixenet Italian Rosé is a delicate blend of Glera and Pinot Noir grapes, care
 Wine of Italy
 Extra dry
 Pack size: 20CL',
+    'Contains Sulphites',
+    'Keep it in a cool
+and dry place away
+from
+  light.',
     'Itally',
     4.00,
     'https://digitalcontent.api.tesco.com/v2/media/ghs/7a4a9e89-1e3b-44ed-be01-40e1e6bae190/aa9e7e1b-3d8e-4493-bada-2653110ff5a4.jpeg?h=540&w=540',
@@ -258,6 +371,22 @@ Produced under licence by The Premier Foods Group Ltd.
 A classic blend of sun ripened tomatoes and fragrant basil
 Suitable for vegetarians
 Pack size: 350G',
+    'Tomatoes (59 %),
+Tomato Purée,
+Garlic Purée,
+Basil (2.5 %),
+Sugar,
+Sunflower Oil,
+Extra Virgin Olive Oil,
+Sea Salt,
+Concentrated Lemon Juice,
+Ground Black Pepper',
+    'May contain Nuts',
+    'Store in a cool,
+dry place.Once opened,
+refrigerate
+and use within 3 days.Best Before
+End: See neck of jar',
     'Itally',
     1.90,
     'https://digitalcontent.api.tesco.com/v2/media/ghs/fffec0b3-e3cc-4ae2-a1d6-55308d2e96c7/4d00a150-b36b-4efb-b68f-cc37871c0607_252697775.jpeg?h=540&w=540',
@@ -279,6 +408,16 @@ Gluten-free
 Additive and preservative free
 Vegetarian Society Approved
 Pack size: 450G',
+    'Pasteurised Skimmed Milk,
+Live Active Yoghurt Cultures (
+  L.Bulgaricus,
+  S.Thermophilus,
+  L.Acidophilus,
+  Bifidus,
+  L.Casei
+)',
+    'Contains: Milk',
+    'Keep Refrigerated / Do Not Freeze / Use By: See LidOnce Opened Consume within 5 Days',
     'Grece',
     '2.75',
     'https://digitalcontent.api.tesco.com/v2/media/ghs/1bd74801-5d6e-405e-963e-c818c4395430/41b0908c-7ec5-4201-a91f-97e5e1094621.jpeg?h=540&w=540',
@@ -296,6 +435,39 @@ Source of Fibre
 Perfect for kebabs
 Suitable for Vegetarians
 Pack size: 320G',
+    'Wheat Flour (
+  Wheat Flour,
+  Calcium Carbonate,
+  Niacin,
+  Iron,
+  Thiamin
+),
+Water,
+Rapeseed Oil,
+Wheat Gluten,
+Wheat Fibre,
+Spirit Vinegar,
+Yeast,
+Preservatives (Potassium Sorbate, Calcium Propionate),
+Raising Agents (
+  Disodium,
+  Diphosphate,
+  Sodium Hydrogen Carbonate,
+  Calcium Phosphate
+),
+Salt,
+Stabiliser (Sodium Carboxymethyl Cellulose),
+Acidity Regulator (Citric Acid),
+Wheat Starch,
+Wheat Flour',
+    'May contain Milk.For allergens,
+including Cereals containing Gluten,
+see ingredients in bold.',
+    'For Best Before: see back of pack.How to Store: Store in a cool,
+dry place.Once opened,
+consume within 24 hours.Freeze me: Suitable for home freezing.ideally freeze as soon as possible
+after
+  purchase but always by ' best before ' date shown.Use within one month.',
     'Grece',
     1.50,
     'https://digitalcontent.api.tesco.com/v2/media/ghs/29a1f18d-d049-4ad5-a0b6-3626d650fa47/9c008656-0643-4106-8dae-bb14a143ce4d.jpeg?h=540&w=540',
@@ -321,6 +493,24 @@ Prepared to a vegan recipe
 Vegan Friendly
 Suitable for vegans
 Pack size: 175G',
+    'Rehydrated Soya Protein [85%],
+Vegetable Oils [Rapeseed Oil, Sunflower Oil],
+Vinegar,
+Natural Flavourings,
+Salt,
+Herbs
+and Spices,
+Onion,
+Sea Salt,
+Water,
+Garlic,
+Paprika Concentrate,
+Maltodextrin,
+Vitamins
+and Minerals [Vitamin B12, Iron]',
+    'Allergen statement: please see ingredients in Bold.',
+    'Keep refrigeated below 5 ° C.For use by date see front of pack.Do not exceed use by date.Once opened keep refrigerated
+and use within 2 days.Suitable for home freezing.Once frozen use within 1 month.',
     'Grece',
     2.50,
     'https://digitalcontent.api.tesco.com/v2/media/ghs/37e36d0c-093c-4a36-99ad-3dde9cabfd23/5641aebb-c824-40b9-8a5c-0b7ba1778b54.jpeg?h=540&w=540',
@@ -332,6 +522,23 @@ Pack size: 175G',
     35,
     'Fermented oat product, Greek style, with added vitamins and minerals.
 So if we wanted to incorporate geography into the name of this product, why not Oatgurt Landskrona Style? It would have been more logical, since this product was both invented and manufactured in Landskrona, Sweden. And even though this amazing stuff is used in the same way as Greek yogurt, it is far from Greek yogurt — theoretically, even further from the yogurt part than from the Greek part, since it is completely free of dairy, while the Greek city of Thessaloniki is only 2,399 kilometres from our factory in Landskrona. Of course all of this is really, really far off from what we are here to tell you about on this webpage which is that Oatgurt Greek Style has a thick, smooth and creamy texture combined with a fresh and pleasantly sour flavour. Not to brag, but this is among the best* products we have ever created, if not the best webpage copy.',
+    'Water,
+Oats 11 %,
+Rapeseed Oil,
+Potato Starch,
+Potato Protein,
+Acids (Malic Acid, Lactic Acid),
+Stabiliser (Pectin),
+Minerals (
+  Calcium Carbonate,
+  Calcium Phosphate,
+  Potassium Iodide
+),
+Salt,
+Vitamins (D2, B12)',
+    'Free From: Milk,
+     Soya Contains: Oats',
+    'Keep refrigerated.Best before: See top of pack.Once opened consume within 5 days.',
     'Grece',
     2.50,
     'https://digitalcontent.api.tesco.com/v2/media/ghs/24193c9d-99c3-440e-99dd-b6de0b9d90ea/65185b15-c6fa-47ec-8ce5-b0e39f4dbd33_1755983584.jpeg?h=540&w=540',
