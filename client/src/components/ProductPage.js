@@ -16,6 +16,7 @@ function ProductPage() {
     console.log(items);
     setItems(items);
   };
+  
 
   return (
     <Box sx={{ flexGrow: 1, margin: 20 }}>
@@ -26,9 +27,9 @@ function ProductPage() {
       >
         {items.map((item, index) => (
           <Grid item xs={2} sm={4} md={4} key={index}>
-            <Card sx={{ maxWidth: 400 }}>
+            <Card sx={{ maxWidth: 400 }} >
               <Link to={`/productpage/${item.id}`}>
-                <CardMedia 
+                <CardMedia  
                   component="img"
                   height="400"
                   src={item.image}

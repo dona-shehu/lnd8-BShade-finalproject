@@ -44,14 +44,14 @@ const { id } = useParams();
       >
         {item.map((value, index) => (
           <Grid item xs={2} sm={4} md={4} key={index}>
-            <Card sx={{ maxWidth:400 }}>
+            <Card sx={{ maxWidth: 400 }} >
               <CardMedia
                 component="img"
-                height="400"
+                height="140"
                 src={value.image}
                 alt="rice"
+                objectFit="cover"
               />
-
               <CardContent>
                 <Typography gutterBottom variant="h5" component="div">
                   <h4> {value.name.toUpperCase()} </h4>

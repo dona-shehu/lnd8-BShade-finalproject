@@ -2,10 +2,20 @@ const express = require("express");
 const app = express();
 app.use(express.json())
 
-const cors = require("cors");
+const cors = require("cors"); 
 app.use(cors());
 
-const port = process.env.PORT || 4444;  
+
+const { Pool } = require('pg');
+const port = process.env.PORT || 4444; 
+
+const pool = new Pool({
+    connectionString: process.env.DATABASE_URL,
+    ssl: {
+        rejectUnauthorized: false
+    }
+}) 
+
 
 let data = [
     {
@@ -162,7 +172,7 @@ let data = [
         "image": "https://digitalcontent.api.tesco.com/v2/media/ghs/37e36d0c-093c-4a36-99ad-3dde9cabfd23/5641aebb-c824-40b9-8a5c-0b7ba1778b54.jpeg?h=540&w=540",
         "sell_id": null
     }
-]
+] 
 //Get inventory
 app.get("/inventory",(req,res)=>{
     res.send(data)
@@ -173,16 +183,8 @@ app.get("/inventory/:id", (req, res) => {
     const filteredProduct = data.filter((product) => product.id === id)
     res.send(filteredProduct);
 });
-
-
-//THE CONNECTION WITH THE DB ON LOCALL HOST
-// const pool = new Pool({
-//     user: 'codeyourfuture',
-//     host: 'localhost',
-//     database: 'hujreh',
-//     password: 'donashehu',
-//     port: 5432
-// });
+//HEROKU DB CREDENTIALS
+//postgres://oxtkkbdctjjczo:b01d249eee4e33bff06247e837e11ce2121ac279ed452b01a1ee866468cddc4e@ec2-34-248-169-69.eu-west-1.compute.amazonaws.com:5432/d5cfpib7aao768
 
 // app.get("/inventory", (req, res) => {
 //     pool.query('SELECT * FROM products')
