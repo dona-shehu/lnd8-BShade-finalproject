@@ -3,12 +3,13 @@ import { Link } from "react-router-dom";
 import { Box, Grid, Card, CardActions, CardContent, CardMedia, Button, Typography } from "@mui/material"
 
 
-function ProductPage() {
+function ProductPage({searchInput}) {
+  const [items, setItems] = useState([]);
   useEffect(() => {
     fetchItems();
-  }, []);
+  }, [items]);
 
-  const [items, setItems] = useState([]);
+  
 
   const fetchItems = async () => {
     const data = await fetch("http://localhost:4444/inventory");
@@ -16,16 +17,27 @@ function ProductPage() {
     console.log(items);
     setItems(items);
   };
-  
-
+console.log(searchInput)
   return (
+    
     <Box sx={{ flexGrow: 1, margin: 20 }}>
       <Grid
         container
         spacing={{ xs: 3, md: 3 }}
         columns={{ xs: 2, sm: 8, md: 12 }}
       >
-        {items.map((item, index) => (
+
+
+
+        {items && items.filter((item)=>{
+          if(searchInput == ""){
+              return items;
+          }
+          else if (
+            items["name"].toLowercase().includes(searchInput) || items["description"].toLowercase().includes(searchInput)){
+            return items; 
+          }
+        }).map((item, index) => (
           <Grid item xs={2} sm={4} md={4} key={index}>
             <Card sx={{ maxWidth: 400 }} >
               <Link to={`/productpage/${item.id}`}>

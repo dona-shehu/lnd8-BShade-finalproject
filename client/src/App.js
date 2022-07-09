@@ -8,7 +8,7 @@ import Navbar from "./components/Navbar";
 import ProductDetails from "./components/ProductDetails";
 
 function App() {
-  //  const [item, setItem] = useState([]);
+
   return (
     <div className="App">
       <Navbar />
@@ -22,7 +22,7 @@ function App() {
         <Route path="register" element={<Register />} />
         <Route
           path="/productpage/:id"
-          element={<ProductDetails/>}
+          element={<ProductDetails />}
         />
       </Routes>
     </div>

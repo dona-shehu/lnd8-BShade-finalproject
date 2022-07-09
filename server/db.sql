@@ -27,8 +27,8 @@ CREATE TABLE products (
   quantity INT NOT NULL,
   description TEXT,
   information TEXT,
-  allergy_information VARCHAR(50),
-  storage VARCHAR(50),
+  allergy_information TEXT,
+  storage TEXT,
   country VARCHAR(30),
   price DECIMAL NOT NULL,
   cat_id INT REFERENCES categories(id),
@@ -153,6 +153,7 @@ Onion Powder,
 Yeast Extract,
 Acid (Citric Acid),
 Garlic Powder',
+     '',
     'Store in a dry place at room temperature.Once opened refrigerate unheated rice for up to 3 days.',
     'Mexico',
     1.25,
@@ -230,6 +231,7 @@ dry place',
     'https://digitalcontent.api.tesco.com/v2/media/ghs/b80d1689-5580-4047-83de-4e6863b7bfa0/8ec547f0-fdab-402b-87aa-1f4e91961c0e.jpeg?h=540&w=540',
     1
   ),
+
   (
     'Herdez Salsa Casera 240G',
     2,
@@ -249,6 +251,7 @@ Iodized Salt (Salt, Potassium Iodate),
 Coriander,
 Acidity Regulator: Citric Acid,
 Firming Agent: Calcium Chloride',
+    '',
     'Store in a cool,
 dry place out of direct sunlight.Once opened,
 keep refrigerated
@@ -280,6 +283,7 @@ end: see cap.',
   Ideal for enjoying on an evening, after dinner
   Pack size: 227G',
     'Arabica Coffee (100 %)',
+    '',
     'Once opened,
 seal with a clip
 and store in a cool,
@@ -327,6 +331,7 @@ Garlic Powder,
 Colour (Paprika Extract),
 Acidity Regulators (Citric Acid, Lactic Acid),
 Antioxidant (Ascorbic Acid).',
+    '',
     'Store in a cool,
 dry place.Once opened,
 keep refrigerated
@@ -348,6 +353,7 @@ Wine of Italy
 Extra dry
 Pack size: 20CL',
     'Contains Sulphites',
+    '',
     'Keep it in a cool
 and dry place away
 from
@@ -467,7 +473,7 @@ see ingredients in bold.',
 dry place.Once opened,
 consume within 24 hours.Freeze me: Suitable for home freezing.ideally freeze as soon as possible
 after
-  purchase but always by ' best before ' date shown.Use within one month.',
+  purchase but always by `best before` date shown.Use within one month.',
     'Grece',
     1.50,
     'https://digitalcontent.api.tesco.com/v2/media/ghs/29a1f18d-d049-4ad5-a0b6-3626d650fa47/9c008656-0643-4106-8dae-bb14a143ce4d.jpeg?h=540&w=540',
