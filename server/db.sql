@@ -231,7 +231,6 @@ dry place',
     'https://digitalcontent.api.tesco.com/v2/media/ghs/b80d1689-5580-4047-83de-4e6863b7bfa0/8ec547f0-fdab-402b-87aa-1f4e91961c0e.jpeg?h=540&w=540',
     1
   ),
-
   (
     'Herdez Salsa Casera 240G',
     2,
