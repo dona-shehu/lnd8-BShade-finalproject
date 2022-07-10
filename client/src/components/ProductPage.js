@@ -36,7 +36,7 @@ console.log(searchInput)
           else if (
             items["name"].toLowercase().includes(searchInput) || items["description"].toLowercase().includes(searchInput)){
             return items; 
-          }
+          }  
         }).map((item, index) => (
           <Grid item xs={2} sm={4} md={4} key={index}>
             <Card sx={{ maxWidth: 400 }} >
