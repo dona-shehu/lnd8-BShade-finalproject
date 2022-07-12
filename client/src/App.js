@@ -6,6 +6,7 @@ import Register from "./components/Register";
 import "./App.css";
 import Navbar from "./components/Navbar";
 import ProductDetails from "./components/ProductDetails";
+import ProductsForSeller from "./components/ProductsForSeller";
 
 function App() {
 
@@ -23,6 +24,10 @@ function App() {
         <Route
           path="/productpage/:id"
           element={<ProductDetails />}
+        />
+        <Route
+          path="/seller/:id/products"
+          element={<ProductsForSeller />}
         />
       </Routes>
     </div>
