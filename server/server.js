@@ -1,6 +1,7 @@
 const express = require("express");
 const app = express();
 app.use(express.json())
+require('dotenv').config()
 
 const cors = require("cors");
 app.use(cors());
@@ -15,7 +16,7 @@ const port = process.env.PORT || 4444;
 
 
 const pool = new Pool({
-    connectionString: process.env.DATABASE_URL,
+    connectionString: process.env.DATABASE_URI,
     ssl: {
         rejectUnauthorized: false
     }
