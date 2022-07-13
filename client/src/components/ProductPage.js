@@ -7,7 +7,7 @@ function ProductPage({ searchInput }) {
   const [items, setItems] = useState([]);
   useEffect(() => {
     fetchItems();
-  }, [items]);
+  }, []);
 
 
 
