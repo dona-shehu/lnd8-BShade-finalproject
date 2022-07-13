@@ -16,7 +16,7 @@ const port = process.env.PORT || 4444;
 
 
 const pool = new Pool({
-    connectionString: process.env.DATABASE_URI,
+    connectionString: process.env.DATABASE_URL,
     ssl: {
         rejectUnauthorized: false
     }
