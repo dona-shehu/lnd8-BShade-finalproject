@@ -11,7 +11,7 @@ function ProductPage() {
   const [items, setItems] = useState([]);
 
   const fetchItems = async () => {
-    const data = await fetch("http://localhost:4444/");
+    const data = await fetch("https://hujreh.herokuapp.com/inventory");
     const items = await data.json();
     console.log(items);
     setItems(items);
@@ -27,7 +27,7 @@ function ProductPage() {
         {items.map((item, index) => (
           <Grid item xs={2} sm={4} md={4} key={index}>
             <Card sx={{ maxWidth: 345 }}>
-              <Link to={`/productpage/${item.prod_id}`}>
+              <Link to={`/productpage/${item.id}`}>
                 <CardMedia
                   component="img"
                   height="140"
@@ -36,9 +36,9 @@ function ProductPage() {
                 />
               </Link>
               <CardContent>
-                <Link to={`/productpage/${item.prod_id}`}>
+                <Link to={`/productpage/${item.id}`}>
                   <Typography gutterBottom variant="h5" component="div">
-                    {item.prod_name.toUpperCase()}
+                    {item.name.toUpperCase()}
                   </Typography>
                 </Link>
                 <Typography variant="body2" color="text.secondary">

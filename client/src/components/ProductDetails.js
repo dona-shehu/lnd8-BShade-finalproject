@@ -26,7 +26,7 @@ const { id } = useParams();
   
 
   const fetchItem = async (id) => {
-    const data = await fetch(`http://localhost:4444/${id}`);
+    const data = await fetch(`https://hujreh.herokuapp.com/inventory/${id}`);
     console.log(data)
     const item = await data.json();
     console.log(item);
@@ -54,7 +54,7 @@ const { id } = useParams();
 
               <CardContent>
                 <Typography gutterBottom variant="h5" component="div">
-                  <h4> {value.prod_name.toUpperCase()} </h4>
+                  <h4> {value.name.toUpperCase()} </h4>
                   <h5>{formatCurrency(`${value.price}`, opts)}</h5>
                 </Typography>
 
