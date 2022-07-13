@@ -4,8 +4,7 @@ function HomePage() {
 
   return (
     <div>
-      <h1>Hujreh</h1>
-      <input type="text" ></input>
+      <h1>Welcome To Hujreh</h1>
     </div>
   );
 }
