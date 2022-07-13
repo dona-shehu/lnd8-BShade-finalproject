@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { Box, Grid, Card, CardActions, CardContent, CardMedia, Button, Typography } from "@mui/material"
+import { Card, CardContent, CardMedia, Typography, Grid, Box } from "@mui/material"
+// import { Card, Row, Col } from "react-bootstrap";
 
 
 function ProductPage({ searchInput }) {
@@ -21,56 +22,40 @@ function ProductPage({ searchInput }) {
   
   return (
 
-    <Box sx={{ flexGrow: 1, margin: 20 }}>
+    <Box sx={{ flexGrow: 1, mt: 5, ml: 8 }}>
       <Grid
         container
-        spacing={{ xs: 3, md: 3 }}
-        columns={{ xs: 2, sm: 8, md: 12 }}
+        spacing={{ xs: 2, md: 3 }}
+        columns={{ xs: 1, sm: 8, md: 12 }}
       >
         {items.map((item, index) => (
-          <Grid item xs={2} sm={4} md={4} key={index}>
-            <Card sx={{ maxWidth: 400 }} >
+
+          <Grid item xs={1} sm={4} md={4} key={index}>
+            <Card sx={{ maxWidth: 345 }}>
               <Link to={`/productpage/${item.id}`}>
                 <CardMedia
                   component="img"
-                  height="400"
-                  src={item.image}
-                  alt="rice"
+                  height="350"
+                  image={item.image}
+                  alt={item.name}
                 />
               </Link>
               <CardContent>
-                <Link to={`/productpage/${item.id}`}>
-                  <Typography gutterBottom variant="h5" component="div">
+                <Link to={`/productpage/${item.id}`} style={{ textDecoration:"none"}}>
+                  <Typography gutterBottom variant="h6" component="div">
                     {item.name}
                   </Typography>
                 </Link>
-                <Typography variant="body2" color="text.secondary">
-
-                </Typography>
               </CardContent>
-
-              <CardActions>
+              {/* <CardActions>
                 <Button size="small">Add to cart</Button>
                 <Button size="small">Learn More</Button>
-              </CardActions>
+              </CardActions> */}
             </Card>
           </Grid>
         ))}
       </Grid>
     </Box>
-
-    // <div>
-    //   {items.map((item) => (
-    //     <div key={item.prod_id}>
-    //       <h4>
-    //         <Link to={`/productpage/${item.prod_id}`}> {item.prod_name} </Link>
-    //       </h4>
-    //       <Link to={`/productpage/${item.prod_id}`}>
-    //         <img src={item.image} alt="" />
-    //       </Link>
-    //     </div>
-    //   ))}
-    // </div>
   );
 }
 
